@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For You ❤️</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      background: linear-gradient(135deg, #ffe7ef, #fffafc);
+      color: #4d2b35;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 30px 18px 60px;
+      text-align: center;
+    }
+
+    .heart {
+      font-size: 68px;
+      margin-top: 18px;
+      animation: beat 1.2s infinite;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.18); }
+    }
+
+    h1 {
+      font-size: 34px;
+      margin: 16px 0 10px;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      color: #7e5d66;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.82);
+      border-radius: 26px;
+      padding: 24px 20px;
+      margin-top: 28px;
+      box-shadow: 0 12px 30px rgba(128, 72, 92, 0.12);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .card h2 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #583a46;
+    }
+
+    button {
+      margin-top: 20px;
+      border: none;
+      background: linear-gradient(135deg, #ea6c8c, #da4a7c);
+      color: white;
+      padding: 15px 28px;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 10px 22px rgba(234, 108, 140, 0.35);
+      transition: transform 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+    }
+
+    #message {
+      display: none;
+      margin-top: 22px;
+      padding-top: 12px;
+      font-size: 16px;
+      line-height: 1.8;
+      color: #563d47;
+      animation: fadeIn 0.7s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .reasons {
+      display: grid;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .reason {
+      background: #fff1f5;
+      padding: 15px 14px;
+      border-radius: 16px;
+      font-size: 15px;
+      color: #4f2f3c;
+      border: 1px solid #ffe2ea;
+    }
+
+    .final {
+      margin-top: 30px;
+    }
+
+    .final strong {
+      font-size: 18px;
+      color: #4b2f3c;
+      line-height: 1.7;
+    }
+
+    .signature {
+      margin-top: 16px;
+      font-weight: 700;
+      font-size: 20px;
+      color: #c3496e;
+    }
+
+    footer {
+      margin-top: 34px;
+      font-size: 12px;
+      color: #8a6571;
+      letter-spacing: 0.5px;
+    }
+
+    .floating-heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 20px;
+      pointer-events: none;
+      user-select: none;
+      animation: float 5s linear forwards;
+      z-index: 999;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-110vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="heart">❤️</div>
+
+    <h1>Hey You...</h1>
+
+    <p class="subtitle">
+      I know today feels heavy.<br />
+      So I made this little corner just for you.
+    </p>
+
+    <div class="card">
+      <h2>Take a breath 🫶</h2>
+      <p>
+        You do not have to be okay every minute. You do not have to hide your
+        feelings. It is completely okay to slow down, rest, and be gentle with yourself.
+      </p>
+
+      <button onclick="showMessage()">Tap this ❤️</button>
+
+      <div id="message">
+        <strong>Surprise 🥺❤️</strong><br /><br />
+        I just want you to remember: you are important, you are loved, and you do not
+        have to carry everything alone.<br /><br />
+        Today can be a soft day. Rest. Drink water. Sit down. Breathe. And be kind to yourself. 🌷
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Things to remember 🌸</h2>
+
+      <div class="reasons">
+        <div class="reason">🫶 You do not need to be strong all the time.</div>
+        <div class="reason">🌷 Your feelings are valid.</div>
+        <div class="reason">☕ You are allowed to slow down and rest.</div>
+        <div class="reason">❤️ You are cared for more than you realize.</div>
+        <div class="reason">🥺 And yes… you are still my favorite person.</div>
+      </div>
+    </div>
+
+    <div class="card final">
+      <p>
+        If today feels overwhelming,<br />
+        just remember one thing...
+      </p>
+      <br />
+      <strong>
+        You do not have to face every hard moment alone. ❤️
+      </strong>
+
+      <div class="signature">— Anvith ❤️</div>
+    </div>
+
+    <footer>Made with ❤️ just for you</footer>
+  </div>
+
+  <script>
+    function showMessage() {
+      const message = document.getElementById("message");
+      message.style.display = "block";
+      createHearts();
+    }
+
+    function createHearts() {
+      for (let i = 0; i < 15; i++) {
+        const heart = document.createElement("div");
+        heart.className = "floating-heart";
+        heart.innerHTML = "❤️";
+
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+        heart.style.fontSize = (15 + Math.random() * 20) + "px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 6000);
+      }
+    }
+  </script>
+</body>
+</html>
