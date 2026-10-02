@@ -3,264 +3,329 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>For You Varshuuuuuu ❤️</title>
+  <title>For Varshuuuuuu ❤️</title>
   <style>
+    :root {
+      --rose-1: #ffe7ef;
+      --rose-2: #ffd9e8;
+      --rose-3: #ffc2d5;
+      --pink: #eb6d8d;
+      --pink-deep: #d74172;
+      --purple: #9f6cd5;
+      --text: #4a2d3a;
+      --muted: #7a5866;
+      --card: rgba(255,255,255,0.72);
+      --line: rgba(255,255,255,0.7);
+      --shadow: rgba(124, 70, 92, 0.18);
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: "Poppins", Arial, sans-serif;
-      background: linear-gradient(135deg, #ffe7ef, #fffafc);
-      color: #4d2b35;
+      font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.7), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(159,108,213,0.18), transparent 25%),
+        linear-gradient(135deg, var(--rose-1), #fff8fb 40%, #ffeef6 100%);
+      color: var(--text);
       min-height: 100vh;
       overflow-x: hidden;
     }
 
-    .container {
-      max-width: 620px;
+    .page {
+      max-width: 780px;
       margin: 0 auto;
-      padding: 30px 18px 60px;
-      text-align: center;
+      padding: 28px 18px 60px;
     }
 
-    .heart {
-      font-size: 68px;
+    .hero {
+      text-align: center;
+      padding: 24px 0 10px;
+      position: relative;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.5);
+      border: 1px solid rgba(255,255,255,0.8);
+      color: var(--pink-deep);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 0 8px 18px rgba(232, 113, 148, 0.12);
+    }
+
+    .heart-main {
+      font-size: 72px;
+      display: inline-block;
       margin-top: 18px;
-      animation: beat 1.2s infinite;
+      animation: beat 1.2s infinite ease-in-out;
+      text-shadow: 0 10px 20px rgba(219, 90, 132, 0.18);
     }
 
     @keyframes beat {
       0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.18); }
+      20% { transform: scale(1.12); }
+      40% { transform: scale(1.2); }
+      60% { transform: scale(1.08); }
+      80% { transform: scale(1.18); }
     }
 
     h1 {
-      font-size: 34px;
-      margin: 16px 0 10px;
-      font-weight: 700;
+      margin: 12px 0 8px;
+      font-size: clamp(2.1rem, 4vw, 3.2rem);
+      line-height: 1.1;
+      font-weight: 800;
     }
 
-    .name {
+    .name-glow {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--pink-deep), #ff8cab, var(--purple));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 10px 30px rgba(215, 66, 120, 0.18);
+      animation: shimmer 2.6s ease-in-out infinite alternate;
+    }
+
+    @keyframes shimmer {
+      from { filter: brightness(1); }
+      to { filter: brightness(1.15); }
+    }
+
+    .emoji-row {
       font-size: 28px;
-      color: #c3496e;
-      font-weight: 700;
-      margin-bottom: 15px;
-      animation: glow 2s ease-in-out infinite;
+      margin: 10px 0 20px;
+      letter-spacing: 0.15em;
+      animation: floatEmoji 2.5s ease-in-out infinite alternate;
     }
 
-    @keyframes glow {
-      0%, 100% { text-shadow: 0 0 10px rgba(195, 73, 110, 0.5); }
-      50% { text-shadow: 0 0 20px rgba(195, 73, 110, 0.8); }
+    @keyframes floatEmoji {
+      from { transform: translateY(0px); }
+      to { transform: translateY(-6px); }
     }
 
     .subtitle {
-      color: #7e5d66;
-      font-size: 17px;
-      line-height: 1.7;
+      max-width: 560px;
+      margin: 0 auto;
+      font-size: 1.04rem;
+      line-height: 1.9;
+      color: var(--muted);
     }
 
     .card {
-      background: rgba(255,255,255,0.82);
-      border-radius: 26px;
-      padding: 24px 20px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(8px);
+      border-radius: 28px;
+      padding: 26px 20px;
+      box-shadow: 0 18px 35px var(--shadow);
       margin-top: 28px;
-      box-shadow: 0 12px 30px rgba(128, 72, 92, 0.12);
-      border: 1px solid rgba(255,255,255,0.3);
     }
 
     .card h2 {
-      font-size: 24px;
-      margin-bottom: 12px;
+      font-size: clamp(1.5rem, 2vw, 2rem);
+      margin-bottom: 16px;
     }
 
-    .card p {
-      font-size: 15px;
-      line-height: 1.8;
-      color: #583a46;
+    .note {
+      font-size: 1.02rem;
+      line-height: 1.9;
+      color: #5a3945;
+    }
+
+    .button-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 18px;
     }
 
     button {
-      margin-top: 20px;
       border: none;
-      background: linear-gradient(135deg, #ea6c8c, #da4a7c);
+      background: linear-gradient(135deg, #ef6d91, #d74072 55%, #a560d8);
       color: white;
-      padding: 15px 28px;
-      border-radius: 30px;
-      font-size: 16px;
+      padding: 16px 28px;
+      border-radius: 999px;
+      font-size: 1rem;
       font-weight: 700;
       cursor: pointer;
-      box-shadow: 0 10px 22px rgba(234, 108, 140, 0.35);
-      transition: transform 0.2s ease;
+      box-shadow: 0 12px 24px rgba(216, 70, 112, 0.28);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     button:hover {
-      transform: translateY(-2px);
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 16px 30px rgba(216, 70, 112, 0.34);
     }
 
-    #message {
+    .message-box {
       display: none;
-      margin-top: 22px;
-      padding-top: 12px;
-      font-size: 16px;
-      line-height: 1.8;
-      color: #563d47;
+      margin-top: 18px;
+      background: rgba(255,255,255,0.45);
+      border: 1px solid rgba(255,255,255,0.7);
+      border-radius: 22px;
+      padding: 18px 16px;
+      font-size: 1rem;
+      line-height: 1.9;
+      color: #4e313d;
       animation: fadeIn 0.7s ease;
     }
 
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(8px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .reasons {
       display: grid;
       gap: 12px;
-      margin-top: 12px;
+      margin-top: 8px;
     }
 
     .reason {
-      background: #fff1f5;
-      padding: 15px 14px;
-      border-radius: 16px;
-      font-size: 15px;
-      color: #4f2f3c;
-      border: 1px solid #ffe2ea;
+      background: rgba(255,255,255,0.5);
+      border: 1px solid rgba(255,255,255,0.7);
+      border-radius: 18px;
+      padding: 15px 16px;
+      font-size: 1rem;
+      color: #4d2c3a;
+      text-align: left;
     }
 
-    .final {
-      margin-top: 30px;
-    }
-
-    .final strong {
-      font-size: 18px;
-      color: #4b2f3c;
-      line-height: 1.7;
+    .love-letter {
+      font-size: 1.08rem;
+      line-height: 2;
+      color: #4d2c3a;
     }
 
     .signature {
-      margin-top: 16px;
-      font-weight: 700;
-      font-size: 20px;
-      color: #c3496e;
+      margin-top: 20px;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--pink-deep);
+      letter-spacing: 0.04em;
     }
 
     footer {
-      margin-top: 34px;
-      font-size: 12px;
-      color: #8a6571;
-      letter-spacing: 0.5px;
+      text-align: center;
+      margin-top: 30px;
+      color: var(--muted);
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
     }
 
     .floating-heart {
       position: fixed;
       bottom: -20px;
-      font-size: 20px;
+      font-size: 22px;
       pointer-events: none;
       user-select: none;
-      animation: float 5s linear forwards;
+      animation: floatUp 5s linear forwards;
       z-index: 999;
     }
 
-    @keyframes float {
+    @keyframes floatUp {
       0% {
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
         opacity: 1;
       }
       100% {
-        transform: translateY(-110vh);
+        transform: translateY(-110vh) scale(1.2);
         opacity: 0;
       }
+    }
+
+    @media (max-width: 560px) {
+      .page { padding-left: 14px; padding-right: 14px; }
+      .card { padding: 22px 16px; }
+      .badge { font-size: 11px; }
+      .emoji-row { letter-spacing: 0.08em; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="heart">❤️</div>
-
-    <h1>Hey Varshuuuuuu...</h1>
-    <div class="name">🩷❤️🥰😍🥹✨✨🩷❤️🥰😍🥹✨</div>
-
-    <p class="subtitle">
-      I know today feels heavy.<br />
-      So I made this little corner just for you.
-    </p>
+  <div class="page">
+    <section class="hero">
+      <div class="badge">For my favorite person</div>
+      <div class="heart-main">❤️</div>
+      <h1>Hey <span class="name-glow">Varshuuuuuu</span>...</h1>
+      <div class="emoji-row">🩷❤️🥰😍🥹✨✨🩷❤️🥰😍🥹✨</div>
+      <p class="subtitle">
+        I know today feels heavy, and I just wanted to make a tiny safe place for your heart.
+        A place full of softness, care, and love — just for you.
+      </p>
+    </section>
 
     <div class="card">
       <h2>Take a breath 🫶</h2>
-      <p>
-        You do not have to be okay every minute. You do not have to hide your
-        feelings. It is completely okay to slow down, rest, and be gentle with yourself.
+      <p class="note">
+        You do not have to be okay every second. You do not have to hide your feelings.
+        It is completely okay to pause, rest, and be gentle with yourself.
       </p>
-
-      <button onclick="showMessage()">Tap this ❤️</button>
-
-      <div id="message">
-        <strong>Surprise 🥺❤️</strong><br /><br />
-        I just want you to remember: you are important, you are loved, and you do not
-        have to carry everything alone.<br /><br />
-        Today can be a soft day. Rest. Drink water. Sit down. Breathe. And be kind to yourself. 🌷
+      <div class="button-wrap">
+        <button onclick="showMessage()">Tap this ❤️</button>
+      </div>
+      <div id="message" class="message-box">
+        <strong>Surprise 🥺❤️</strong><br><br>
+        You are important, you are loved, and you do not have to carry everything alone.
+        Give yourself permission to slow down tonight. Drink water, breathe deeply, and let your heart rest.
+        You are not too much. You are cherished. 🌷
       </div>
     </div>
 
     <div class="card">
       <h2>Things to remember 🌸</h2>
-
       <div class="reasons">
-        <div class="reason">🫶 You do not need to be strong all the time.</div>
-        <div class="reason">🌷 Your feelings are valid.</div>
-        <div class="reason">☕ You are allowed to slow down and rest.</div>
+        <div class="reason">🫶 You do not have to be strong all the time.</div>
+        <div class="reason">🌷 Your feelings are valid, no matter how messy they feel.</div>
+        <div class="reason">☕ Rest is not laziness. It is healing.</div>
         <div class="reason">❤️ You are cared for more than you realize.</div>
         <div class="reason">🥺 And yes… you are still my favorite person.</div>
       </div>
     </div>
 
-    <div class="card final">
-      <p>
-        If today feels overwhelming,<br />
-        just remember one thing...
+    <div class="card">
+      <h2>A little love note 💌</h2>
+      <p class="love-letter">
+        Varshuuuuuu, I hope this page brings even a tiny smile to your face.<br>
+        Sometimes life feels too loud and too heavy, but even then, you deserve softness.
+        You deserve peace. You deserve love that feels safe and warm.<br><br>
+        Please remember: You are not failing. You are human. And even on the hardest days,
+        you are still worthy of kindness, comfort, and care.<br><br>
+        I am really glad you are in my life, and I hope you remember that you are deeply loved.
       </p>
-      <br />
-      <strong>
-        You do not have to face every hard moment alone. ❤️
-      </strong>
-
       <div class="signature">— Given by Anvith ❤️</div>
     </div>
 
-    <footer>Made with ❤️ just for you Varshuuuuuu 🩷✨</footer>
+    <footer>Made with ❤️ just for you, Varshuuuuuu ✨</footer>
   </div>
 
   <script>
     function showMessage() {
-      const message = document.getElementById("message");
-      message.style.display = "block";
+      const box = document.getElementById("message");
+      box.style.display = "block";
       createHearts();
     }
 
     function createHearts() {
-      for (let i = 0; i < 15; i++) {
+      for (let i = 0; i < 18; i++) {
         const heart = document.createElement("div");
         heart.className = "floating-heart";
         heart.innerHTML = "❤️";
-
         heart.style.left = Math.random() * 100 + "vw";
         heart.style.animationDuration = (3 + Math.random() * 3) + "s";
-        heart.style.fontSize = (15 + Math.random() * 20) + "px";
-
+        heart.style.fontSize = (16 + Math.random() * 22) + "px";
         document.body.appendChild(heart);
-
-        setTimeout(() => {
-          heart.remove();
-        }, 6000);
+        setTimeout(() => heart.remove(), 6000);
       }
     }
   </script>
